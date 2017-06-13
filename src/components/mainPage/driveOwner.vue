@@ -1,5 +1,5 @@
 <template>
-	<div class="nav">
+	<div class="driveOwner">
 		
 	</div>
 </template>
@@ -7,7 +7,7 @@
 <script>
 
 export default {
-	name: 'nav',
+	name: 'driveOwner',
 	data () {
 		return {
 		  	imgPath:"../../static/",
@@ -17,5 +17,5 @@ export default {
 </script>
 
 <style lang='less' scoped>
-@import '../assets/common.less';
+@import '../../assets/common.less';
 </style>
