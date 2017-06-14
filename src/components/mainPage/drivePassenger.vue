@@ -6,17 +6,17 @@
 					<div class="fontBold">轻松租车，随借随还，分时租赁！</div>
 				</div>
 				<div class="wh20p textCenter">
-					<img class="bigIcon" :src="imgPath+'deleteLater.png'">
+					<img class="bigIcon" :src="imgPath+'event.png'">
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
 				<div class="pd10">
-					<img class="icon" :src="imgPath+'deleteLater.png'">
+					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">您在哪儿取车？</span>
 					<span class="smallFont">（免费送车）</span>
 				</div>
 				<div class="pd10">
-					<img class="icon" :src="imgPath+'deleteLater.png'">
+					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">分时租赁</span>
 					<span class="smallFont">（查找离您最近的闲置车辆）</span>
 				</div>
