@@ -14,12 +14,12 @@ export default new Router({
       path: '/',
       name: 'Hello',
       component: Hello,
-      redirect: '/orderPassenger',
+      redirect: '/order_passenger',
       children:[
-      	{ path:'/orderPassenger',component: orderPassenger,},
-      	{path:'/orderOwner',component: orderOwner},
-      	{path:'/drivePassenger',component: drivePassenger},
-      	{path:'/driveOwner',component: driveOwner},
+      	{ path:'/order_passenger',component: orderPassenger,},
+      	{path:'/order_owner',component: orderOwner},
+      	{path:'/drive_passenger',component: drivePassenger},
+      	{path:'/drive_owner',component: driveOwner},
       ]
     }
   ]

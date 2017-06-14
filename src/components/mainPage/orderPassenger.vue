@@ -54,10 +54,10 @@
 			</div>
 			
 		</div>
-		<div class="mgt10 yellowBackBtn bigFont fontBold textCenter pd5">
+		<div class=" yellowBackBtn bigFont fontBold textCenter pd5 btns">
 			<span>开始预约</span>
 		</div>
-		<div class="mgt10 yellowBorderBtn fontBold textCenter pd5">
+		<div class=" yellowBorderBtn fontBold textCenter pd5  btns">
 			<span>我想成为司机，点这儿月赚16888</span>
 		</div>
 	</div>
@@ -78,15 +78,21 @@ export default {
 <style lang='less' scoped>
 @import '../../assets/common.less';
 .orderPassenger{
+	position: absolute;
+	width: 100%;
+	top: 6em;
+	bottom: 0;
 	background-color: @backGrey;
-	padding: 0.5em;
 	color:@fontGrey;
-	padding-bottom: 4em;
 }
 .main{
+	margin: 0.5em;
 	background-color: white;
 	box-shadow: 0em 0.1em 0em #DDD;
 	
+}
+.btns{
+	margin: 1em 0.5em 0em 0.5em;
 }
 .greyBottomBorder{
 	border-bottom: 1px solid @backGrey ;
