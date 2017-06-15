@@ -49,8 +49,7 @@
 
 <script>
 import Modal from 'iview/src/components/modal';
-/*import Icon from 'iview/src/components/icon';*/
-/*import Button from 'iview/src/components/button';*/
+
 export default {
 	name: 'driveOwner',
 	data () {
@@ -111,7 +110,7 @@ export default {
 	position: absolute;
 	bottom: 0;
 	margin:0.5em;
-	padding: 0.5em 0em;
+	padding: 0.8em 0em;
 	font-size: 1.1em;
 }
 .borderTopBottom{
