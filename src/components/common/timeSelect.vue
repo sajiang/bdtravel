@@ -1,7 +1,9 @@
 <template>
-	<div class="timeSelect" @click="showSelect">
-		1
-	</div>
+	<span class="timeSelect" @click="showSelect">
+		<slot>
+	    	选择时间
+	  	</slot>
+	</span>
 </template>
 
 <script>
@@ -70,6 +72,7 @@ export default {
 			var startMIN=today.getMinutes();
 			if(startMIN>55){
 				startH++; 
+				startMIN=0;
 			}
 			for(var i=startH;i<24;i++){
 				timeData[0].children.push({
@@ -86,7 +89,6 @@ export default {
 			timeData[0].children[0].children=[];
 			for(var i=startMIN;i<60;i+=5){
 				timeData[0].children[0].children.push({
-
 					value:i,
 					text:i+"分"
 				
@@ -96,8 +98,9 @@ export default {
 		
 		},
 		showSelect(){
+			var _this=this;
 			this.picker.show(function(items) {
-				console.log(items)
+				_this.$emit("timeSelected",items);
 			});
 		}
 	}

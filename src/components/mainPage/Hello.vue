@@ -9,7 +9,7 @@
       </div>
       <div class="clearfix">
         <div class="wh50p textRight"><span :class="navInfo.second=='passenger'?'yellowNav':''" class="mgr10 pd5 inlineBlock" @click="navInfo.second='passenger'">{{navInfo.fisrt=='order'?'乘客':'我要租车'}}</span></div>
-        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">车主</span><span class="smallFont saleBack">注册有奖</span></div>
+        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">{{navInfo.fisrt=='order'?'司机':'车主'}}</span><span class="smallFont saleBack">注册有奖</span></div>
       </div>
     </div>
     <router-view></router-view>
@@ -66,6 +66,6 @@ export default {
   background-size: 100% 100%;
   .inlineBlock;
   .textRight;
-  padding: 0 1em;
+  padding: 0.3em 1em;
 }
 </style>

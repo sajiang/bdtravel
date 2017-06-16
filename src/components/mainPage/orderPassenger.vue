@@ -14,20 +14,21 @@
 				<div class="pd10">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">您在哪儿上车？</span>
-					<v-time-select></v-time-select>
 				</div>
 				<div class="pd10">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">您要去哪儿？</span>
 				</div>
 				<div class="clearfix pd10">
-					<div class="wh50p ">
+					<div class="wh50p " @click="showPeopleNumPicker">
 						<img class="icon" :src="imgPath+'personNum.png'">
-						<span class="fontBold">0人</span>
+						<span class="fontBold">{{peopleNum}}人</span>
 					</div>
 					<div class="wh50p">
 						<img class="icon" :src="imgPath+'time.png'">
-						<span class="fontBold">06/08 13:00</span>
+						<span class="fontBold">
+							<v-time-select @timeSelected="updateTime($event)">{{timeMsg?timeMsg:"选择时间"}}</v-time-select>
+						</span>
 					</div>
 				</div>
 				<div class="clearfix greyBottomBorder pd10">
@@ -71,10 +72,46 @@ export default {
 	data () {
 		return {
 		  	imgPath:"../../static/",
+		  	timeObj:{},
+		  	timeMsg:"",
+		  	peopleNum:0,
+		  	peopleNumPicker:{},
 		}
 	},
 	 components: {
     	'v-time-select': timeSelect,
+	},
+	created(){
+		this.initPeopleNumPicker();
+	},
+	methods:{
+		showPeopleNumPicker(){
+			var _this=this;
+			this.peopleNumPicker.show(function(selectedItem) {
+			    _this.peopleNum=selectedItem[0].value;
+			});
+		},
+		initPeopleNumPicker(){
+			this.peopleNumPicker = new mui.PopPicker();
+			this.peopleNumPicker.setData([{
+				    value: "1",
+				    text: "1",
+				}, {
+				    value: "2",
+				    text: "2"
+				}, {
+				    value: "3",
+				    text: "3"
+				}, {
+				    value: "4",
+				    text: "4"
+				}
+			]);
+		},
+		updateTime(timeObj){
+			this.timeObj=timeObj;
+			this.timeMsg=timeObj[0].text+" "+timeObj[1].value+":"+timeObj[2].value
+		}
 	}
 
 }

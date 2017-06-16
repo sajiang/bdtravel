@@ -21,6 +21,11 @@ export default new Router({
       	{path:'/drive_passenger',component: drivePassenger},
       	{path:'/drive_owner',component: driveOwner},
       ]
-    }
+    },
+    { path:'/driver_authentication',
+      name:'driverAuthentication',
+      component: resolve => require(['@/components/driverAuthentication'], resolve),
+    },
+    
   ]
 })
