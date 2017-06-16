@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<div class=" yellowBackBtn bigFont fontBold textCenter pd5 btns">
+		<div class=" yellowBackBtn bigFont fontBold textCenter pd5 btns" @click="toRentCar">
 			<span>开始租车</span>
 		</div>
 		<div class=" yellowBorderBtn fontBold textCenter pd5  btns">
@@ -38,6 +38,11 @@ export default {
 	data () {
 		return {
 		  	imgPath:"../../static/",
+		}
+	},
+	methods:{
+		toRentCar(){
+			this.$router.push({path:"/rent_car"});
 		}
 	}
 }

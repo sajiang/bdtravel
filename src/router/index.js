@@ -16,7 +16,7 @@ export default new Router({
       component: Hello,
       redirect: '/order_passenger',
       children:[
-      	{ path:'/order_passenger',component: orderPassenger,},
+      	{path:'/order_passenger',component: orderPassenger,},
       	{path:'/order_owner',component: orderOwner},
       	{path:'/drive_passenger',component: drivePassenger},
       	{path:'/drive_owner',component: driveOwner},
@@ -25,6 +25,10 @@ export default new Router({
     { path:'/driver_authentication',
       name:'driverAuthentication',
       component: resolve => require(['@/components/driverAuthentication'], resolve),
+    },
+    { path:'/rent_car',
+      name:'rentCar',
+      component: resolve => require(['@/components/rentCar'], resolve),
     },
     
   ]
