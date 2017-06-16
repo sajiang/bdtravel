@@ -7,25 +7,26 @@
 					<div class="smallFont mgt5">越用越安全</div>
 				</div>
 				<div class="wh20p textCenter">
-					<img class="bigIcon" :src="imgPath+'deleteLater.png'">
+					<img class="bigIcon" :src="imgPath+'event.png'">
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
 				<div class="pd10">
-					<img class="icon" :src="imgPath+'deleteLater.png'">
+					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">您在哪儿上车？</span>
+					<v-time-select></v-time-select>
 				</div>
 				<div class="pd10">
-					<img class="icon" :src="imgPath+'deleteLater.png'">
+					<img class="icon" :src="imgPath+'locationBlack.png'">
 					<span class="fontBold">您要去哪儿？</span>
 				</div>
 				<div class="clearfix pd10">
 					<div class="wh50p ">
-						<img class="icon" :src="imgPath+'deleteLater.png'">
+						<img class="icon" :src="imgPath+'personNum.png'">
 						<span class="fontBold">0人</span>
 					</div>
 					<div class="wh50p">
-						<img class="icon" :src="imgPath+'deleteLater.png'">
+						<img class="icon" :src="imgPath+'time.png'">
 						<span class="fontBold">06/08 13:00</span>
 					</div>
 				</div>
@@ -64,14 +65,18 @@
 </template>
 
 <script>
-
+import timeSelect from '@/components/common/timeSelect'
 export default {
 	name: 'orderPassenger',
 	data () {
 		return {
 		  	imgPath:"../../static/",
 		}
+	},
+	 components: {
+    	'v-time-select': timeSelect,
 	}
+
 }
 </script>
 

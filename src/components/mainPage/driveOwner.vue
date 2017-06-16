@@ -33,7 +33,7 @@
 	    </Modal>
 	    <Modal v-model="successModel" :closable="false" class-name="vertical-center-modal">
 	    	<div class="textCenter">
-	    		<img :src="imgPath+'compelete.png'" class="bigIcon" >
+	    		<img :src="imgPath+'complete.png'" class="bigIcon" >
 	    	</div>
 	        <p class="mgt5">尊敬的<span class="yellow">{{this.cellphoneNumber}}</span>车主：</p>
 	        <p class="indent2">您好！</p>

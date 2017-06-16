@@ -2,14 +2,14 @@
   <div class="hello">
     <div class="nav fontBold">
       <div class="pd10 clearfix">
-        <div class="wh10p"><img class="icon" :src="imgPath+'/deleteLater.png'"></div>
+        <div class="wh10p"><img class="icon" :src="imgPath+'/person.png'"></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='order'?'yellow':''" @click="navInfo.fisrt='order'"><span>打车</span></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='drive'?'yellow':''" @click="navInfo.fisrt='drive'"><span>自驾租车</span></div>
-        <div class="wh10p"><img class="icon" :src="imgPath+'/deleteLater.png'"></div>
+        <div class="wh10p"><img class="icon" :src="imgPath+'/info.png'"></div>
       </div>
       <div class="clearfix">
         <div class="wh50p textRight"><span :class="navInfo.second=='passenger'?'yellowNav':''" class="mgr10 pd5 inlineBlock" @click="navInfo.second='passenger'">{{navInfo.fisrt=='order'?'乘客':'我要租车'}}</span></div>
-        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">车主</span><span class="smallFont">注册有奖</span></div>
+        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">车主</span><span class="smallFont saleBack">注册有奖</span></div>
       </div>
     </div>
     <router-view></router-view>
@@ -59,5 +59,13 @@ export default {
 .yellowNav{
   .yellow;
   border-bottom: 0.2em solid @yellow;
+}
+.saleBack{
+  background-image: url("../../../static/sale.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  .inlineBlock;
+  .textRight;
+  padding: 0 1em;
 }
 </style>
