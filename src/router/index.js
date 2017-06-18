@@ -22,9 +22,15 @@ export default new Router({
       	{path:'/drive_owner',component: driveOwner},
       ]
     },
-    { path:'/driver_authentication',
-      name:'driverAuthentication',
-      component: resolve => require(['@/components/driverAuthentication'], resolve),
+    { 
+      path:'/driver_authentication/step1',
+      name:'driverAuthenticationStep1',
+      component: resolve => require(['@/components/driverAuthentication/step1'], resolve),
+    },
+    { 
+      path:'/driver_authentication/step2',
+      name:'driverAuthenticationStep2',
+      component: resolve => require(['@/components/driverAuthentication/step2'], resolve),
     },
     { path:'/rent_car',
       name:'rentCar',

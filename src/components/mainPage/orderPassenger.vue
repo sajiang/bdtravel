@@ -78,7 +78,7 @@ export default {
 		  	peopleNumPicker:{},
 		}
 	},
-	 components: {
+	components: {
     	'v-time-select': timeSelect,
 	},
 	created(){
