@@ -32,6 +32,11 @@ export default new Router({
       name:'driverAuthenticationStep2',
       component: resolve => require(['@/components/driverAuthentication/step2'], resolve),
     },
+    { 
+      path:'/driver_authentication/preview',
+      name:'driverAuthenticationPreview',
+      component: resolve => require(['@/components/driverAuthentication/preview'], resolve),
+    },
     { path:'/rent_car',
       name:'rentCar',
       component: resolve => require(['@/components/rentCar'], resolve),

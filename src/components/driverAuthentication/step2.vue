@@ -65,7 +65,7 @@
 				</div>
 				<div class="needHelp" >需要帮助 ></div>
 			</div>
-			<div class="yellowBackBtn fontBold textCenter sureBtn" @click="">
+			<div class="yellowBackBtn fontBold textCenter sureBtn" @click="toPreview">
 				<span>确定</span>
 			</div>
 		</div>
@@ -119,6 +119,9 @@ export default {
     	'v-color-select': colorSelect,
 	},
 	methods:{
+		toPreview(){
+			this.$router.push({path:"/driver_authentication/preview"});
+		},
 		showTimeSelect(){
 			this.maskShow=true;
 			this.isShowTimeSelect=true;
