@@ -43,26 +43,7 @@
 			</span>
 		</div>
 		<div class="carList">
-			<div class="carItem clearfix">
-				<div class="carImg wh33p">
-					<img :src="imgPath+'deleteLater.png'" class="pd10">
-				</div>
-				<div class="carInfo wh66p">
-					<div class="clearfix pd5">
-						<div class="wh66p ">
-							<div>大众朗逸或同级轿车</div>
-							<div class="fontGrey smallFont">
-								外牌|自动|5座|1.6L及以上
-							</div>
-						</div>
-						<div class="wh33p"><span class="smallFont">¥</span><span class="bigFont">109</span><span class="smallFont">/天</span></div>
-					</div>
-					<div class="borderTopGrey clearfix pd5">
-						<img v-for="i in 5" :src="imgPath+'/deleteLater.png'" class="icon fr">
-					</div>
-				</div>
-			</div>
-			<div class="carItem clearfix">
+			<div class="carItem clearfix" v-for="i in 6" @click="toSureOrder">
 				<div class="carImg wh33p">
 					<img :src="imgPath+'deleteLater.png'" class="pd10">
 				</div>
@@ -131,6 +112,9 @@ export default {
 		orderSelected(flag){
 			this.orderSelectShow=false;
 			this.orderStr=flag=="price"?"价格":"星级";
+		},
+		toSureOrder(){
+			this.$router.push({path:'rent_car/sure_order'})
 		}
 	}
 }
@@ -143,6 +127,9 @@ export default {
 	background-color: @backGrey;
 }
 .filter{
+	position: fixed;
+	top: 0em;
+	width: 100%;
 	background-color: white;
 	padding: 0.5em 0em 1em 0em;
 	border-bottom: 1px solid @borderGrey;
@@ -163,19 +150,23 @@ export default {
 		white-space: nowrap;/*文本不进行换行*/
 	}
 }
-.carItem{
-	.mgt5;
-	background-color: white;
-	.carImg{
-		;
-	}
-	.carInfo{
-		;
-	}
-	.borderTopGrey{
-		border-top: 1px solid @borderGrey;
+.carList{
+	margin-top: 3em;
+	.carItem{
+		.mgt5;
+		background-color: white;
+		.carImg{
+			;
+		}
+		.carInfo{
+			;
+		}
+		.borderTopGrey{
+			border-top: 1px solid @borderGrey;
+		}
 	}
 }
+
 .orderSelectPanel{
 	position: absolute;
 	top: 3em;

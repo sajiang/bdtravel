@@ -45,6 +45,10 @@ export default new Router({
       name:'rentCar',
       component: resolve => require(['@/components/rentCar'], resolve),
     },
+    { path:'/rent_car/sure_order',
+      name:'sureOrder',
+      component: resolve => require(['@/components/sureOrder'], resolve),
+    },
     
   ]
 })
