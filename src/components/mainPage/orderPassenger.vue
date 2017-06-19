@@ -56,7 +56,7 @@
 			</div>
 			
 		</div>
-		<div class=" yellowBackBtn bigFont fontBold textCenter pd5 btns">
+		<div class=" yellowBackBtn bigFont fontBold textCenter pd5 btns" @click="startOrder">
 			<span>开始预约</span>
 		</div>
 		<div class=" yellowBorderBtn fontBold textCenter pd5  btns">
@@ -85,6 +85,9 @@ export default {
 		this.initPeopleNumPicker();
 	},
 	methods:{
+		startOrder(){
+			this.$router.push({path:"/order_car"});
+		},
 		showPeopleNumPicker(){
 			var _this=this;
 			this.peopleNumPicker.show(function(selectedItem) {

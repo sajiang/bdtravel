@@ -15,7 +15,7 @@ export default {
       recalc = function () {
         var clientWidth = docEl.clientWidth;
         if (!clientWidth) return;
-        docEl.style.fontSize = 15 * (clientWidth / 320) + 'px';
+        docEl.style.fontSize = 14 * (clientWidth / 320) + 'px';
       };
     if (!doc.addEventListener) return;
     doc.addEventListener('DOMContentLoaded', recalc, false);
