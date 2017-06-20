@@ -11,9 +11,9 @@
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
-				<div class="pd10" @click="isCitySelectShow=true">
+				<div class="pd10" @click="showCitySelect">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
-					<span class="fontBold"><v-position-select :is_show="isCitySelectShow">您在哪儿上车？</v-position-select></span>
+					<span class="fontBold"><v-position-select :message="isCitySelectShow" @cancelSelect="cancelPositionSelect()">您在哪儿上车？</v-position-select></span>
 				</div>
 				<div class="pd10">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
@@ -117,6 +117,12 @@ export default {
 		updateTime(timeObj){
 			this.timeObj=timeObj;
 			this.timeMsg=timeObj[0].text+" "+timeObj[1].value+":"+timeObj[2].value
+		},
+		showCitySelect(){
+			this.isCitySelectShow=true;
+		},
+		cancelPositionSelect(){
+			this.isCitySelectShow=false;
 		}
 	}
 
