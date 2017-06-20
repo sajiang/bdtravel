@@ -11,9 +11,9 @@
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
-				<div class="pd10">
+				<div class="pd10" @click="isCitySelectShow=true">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
-					<span class="fontBold">您在哪儿上车？</span>
+					<span class="fontBold"><v-position-select :is_show="isCitySelectShow">您在哪儿上车？</v-position-select></span>
 				</div>
 				<div class="pd10">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
@@ -67,6 +67,7 @@
 
 <script>
 import timeSelect from '@/components/common/timeSelect'
+import positonSelect from '@/components/common/positonSelect'
 export default {
 	name: 'orderPassenger',
 	data () {
@@ -76,10 +77,12 @@ export default {
 		  	timeMsg:"",
 		  	peopleNum:0,
 		  	peopleNumPicker:{},
+		  	isCitySelectShow:false,
 		}
 	},
 	components: {
     	'v-time-select': timeSelect,
+    	'v-position-select': positonSelect,
 	},
 	created(){
 		this.initPeopleNumPicker();
