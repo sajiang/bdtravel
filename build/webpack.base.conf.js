@@ -12,7 +12,8 @@ module.exports = {
     app: './src/main.js'
   },
   externals: {
-    'mui': 'window.mui' //引入mui
+    'mui': 'window.mui' ,//引入mui，
+    'AMap': 'window.AMap' //引入mui
   },
   output: {
     path: config.build.assetsRoot,

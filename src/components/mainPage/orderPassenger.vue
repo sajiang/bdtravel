@@ -11,13 +11,13 @@
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
-				<div class="pd10" @click="showCitySelect">
-					<img class="icon" :src="imgPath+'locationBlack.png'">
-					<span class="fontBold"><v-position-select :message="isCitySelectShow" @cancelSelect="cancelPositionSelect()">您在哪儿上车？</v-position-select></span>
+				<div class="pd10" @click="isCityFromSelectShow=true;">
+					<img class="icon" :src="imgPath+'locationYellow.png'">
+					<span class="fontBold"><v-position-select :message="isCityFromSelectShow" @cancelSelect="cancelPositionFromSelect()" @placeSelected="placeFromSelected($event)">{{positionFrom?positionFrom:"您在哪儿上车？"}}</v-position-select></span>
 				</div>
-				<div class="pd10">
+				<div class="pd10" @click="isCityToSelectShow=true;">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
-					<span class="fontBold">您要去哪儿？</span>
+					<span class="fontBold"><v-position-select :message="isCityToSelectShow" @cancelSelect="cancelPositionToSelect()" @placeSelected="placeToSelected($event)">{{positionTo?positionTo:"您要去哪儿？"}}</v-position-select></span>
 				</div>
 				<div class="clearfix pd10">
 					<div class="wh50p " @click="showPeopleNumPicker">
@@ -77,7 +77,10 @@ export default {
 		  	timeMsg:"",
 		  	peopleNum:0,
 		  	peopleNumPicker:{},
-		  	isCitySelectShow:false,
+		  	isCityFromSelectShow:false,
+		  	isCityToSelectShow:false,
+		  	positionFrom:"",
+		  	positionTo:"",
 		}
 	},
 	components: {
@@ -118,11 +121,19 @@ export default {
 			this.timeObj=timeObj;
 			this.timeMsg=timeObj[0].text+" "+timeObj[1].value+":"+timeObj[2].value
 		},
-		showCitySelect(){
-			this.isCitySelectShow=true;
+		cancelPositionFromSelect(){
+			this.isCityFromSelectShow=false;
 		},
-		cancelPositionSelect(){
-			this.isCitySelectShow=false;
+		placeFromSelected(item){
+			this.isCityFromSelectShow=false;
+			this.positionFrom=item.name;
+		},
+		cancelPositionToSelect(){
+			this.isCityToSelectShow=false;
+		},
+		placeToSelected(item){
+			this.isCityToSelectShow=false;
+			this.positionTo=item.name;
 		}
 	}
 
