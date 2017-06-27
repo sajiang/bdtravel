@@ -1,7 +1,17 @@
 <template>
 	<div class="rentCar">
 		<div class="filter textCenter">
-			<span class="w5">取车地点ｖ</span>
+			<span class="w5"  @click="placeSelectShow=true;">
+				<v-position-select :message="placeSelectShow" @cancelSelect="cancelPlaceSelect()" @placeSelected="placeSelected($event)">
+					<span v-if="positionStr" class="yellow">
+						{{positionStr}}
+					</span>
+					<span v-else>
+						取车地点ｖ
+					</span>
+				
+				</v-position-select>
+			</span>
 			<span class="w3" @click="showSetSelect">
 				<v-set-select :is_show="setSelectShow" @setSelected="updateSet($event)">
 					<span v-if="setStr" class="yellow">
@@ -12,7 +22,16 @@
 					</span>
 				</v-set-select>
 			</span>
-			<span class="w3">品牌ｖ</span>
+			<span class="w3" @click="showBrandSelect">
+				<v-brand-select @brandSelected="updateBrand($event)" :is_show="brandSelectShow">
+					<span v-if="brandStr" class="yellow">
+						{{brandStr}}
+					</span>
+					<span v-else>
+						品牌ｖ
+					</span>
+				</v-brand-select>
+			</span>
 			<span class="w3" @click="showTypeSelect">
 				<v-type-select :is_show="typeSelectShow" @typeSelected="updateType($event)">
 					<span v-if="typeStr" class="yellow">
@@ -69,23 +88,31 @@
 <script>
 import setSelect from '@/components/common/setSelect'
 import typeSelect from '@/components/common/typeSelect'
+import brandSelect from '@/components/common/brandSelect'
+import positonSelect from '@/components/common/positonSelect'
 export default {
 	name: 'rentCar',
 	data () {
 		return {
 		  	imgPath:"../../static/",
 		  	maskShow:false,
+		  	placeSelectShow:false,
 		  	typeSelectShow:false,
 		  	setSelectShow:false,
 		  	orderSelectShow:false,
+		  	brandSelectShow:false,
+		  	positionStr:"",
 		  	setStr:"",
 		  	typeStr:"",
 		  	orderStr:"",
+		  	brandStr:"",
 		}
 	},
 	components: {
     	'v-set-select': setSelect,
-    	'v-type-select': typeSelect
+    	'v-type-select': typeSelect,
+    	'v-brand-select': brandSelect,
+    	'v-position-select': positonSelect
 	},
 	methods:{
 		showSetSelect(){
@@ -98,6 +125,13 @@ export default {
 		},
 		showOrderSelect(){
 			this.orderSelectShow=!this.orderSelectShow;
+		},
+		showBrandSelect(){
+			this.brandSelectShow=!this.brandSelectShow;
+		},
+		updateBrand(item){
+			this.brandSelectShow=false;
+			this.brandStr=item;
 		},
 		updateSet(item){
 			this.maskShow=false;
@@ -115,6 +149,13 @@ export default {
 		},
 		toSureOrder(){
 			this.$router.push({path:'rent_car/sure_order'})
+		},
+		placeSelected(item){
+			this.positionStr=item.name;
+			this.placeSelectShow=false;
+		},
+		cancelPlaceSelect(){
+			this.placeSelectShow=false;
 		}
 	}
 }
@@ -136,14 +177,14 @@ export default {
 	color:@fontGrey;
 	.fontBold;
 	.w3{
-		width: 3em;
+		width: 3.5em;
 		display: inline-block;
 		overflow: hidden;/*内容超出后隐藏*/
 		text-overflow: ellipsis;/* 超出内容显示为省略号*/
 		white-space: nowrap;/*文本不进行换行*/
 	}
 	.w5{
-		width: 5em;
+		width: 5.5em;
 		display: inline-block;
 		overflow: hidden;/*内容超出后隐藏*/
 		text-overflow: ellipsis;/* 超出内容显示为省略号*/

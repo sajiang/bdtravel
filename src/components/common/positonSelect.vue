@@ -1,4 +1,3 @@
-
 <template>
 	<span class="positonSelect">
 		<slot>
@@ -83,7 +82,7 @@ export default {
 		},
 		goAnchor(selector) {
 	        var anchor = this.$el.querySelector(selector);
-	        this.$el.querySelector(".selectPanel").scrollTop=anchor.offsetTop;
+	        this.$el.querySelector(".selectPanel").scrollTop=(anchor.offsetTop-50);
 	    },
 	    citySelected(city){
 	    	this.selectedCityName=city;
@@ -122,6 +121,9 @@ export default {
 
 <style lang='less' scoped>
 @import '../../assets/common.less';
+.positonSelect{
+	text-align: left;
+}
 input{
 	border:none;
 	outline: none;
@@ -130,7 +132,7 @@ input{
 	position: fixed;
 		background-color: @backGrey;
 		width: 100%;
-		top: 3em;
+		top: 0em;
 		bottom: 0em;
 		left: 0em;
 		overflow-y: scroll;
@@ -147,7 +149,7 @@ input{
 	.body{
 		
 		padding: 1em;
-		
+		margin-top: 3em;
 		color: black;
 		font-weight: normal;
 		.citySelect{
