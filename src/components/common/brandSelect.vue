@@ -5,9 +5,73 @@
 		</slot>
 		<div class="content" v-show="is_show">
 			<div class="title">热门车辆品牌</div>
-			<div>
-				
+			<div class="clearfix">
+				<div class="clearfix textCenter mgt5 wh90p">
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Volkswagen.png'">
+						</div>
+						<div>大众</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Hyundai.png'">
+						</div>
+						<div>现代</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Toyota.png'">
+						</div>
+						<div>丰田</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Ford.png'">
+						</div>
+						<div>福特</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Buick.png'">
+						</div>
+						<div>别克</div>
+					</div>
+				</div>
+				<div class="clearfix textCenter mgt5 wh90p">
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'Honda.png'">
+						</div>
+						<div>本田</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'KIA.png'">
+						</div>
+						<div>起亚</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'audi.png'">
+						</div>
+						<div>奥迪</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img  :src="imgPath+'Nissan.png'">
+						</div>
+						<div>日产</div>
+					</div>
+					<div class="wh20p">
+						<div class="logo">
+							<img :src="imgPath+'CHANA.png'">
+						</div>
+						<div>长安</div>
+					</div>
+				</div>
 			</div>
+			
 			<div v-for="(letter,index) in brandData" :id="'anchor-'+index">
 				<div class="title">{{letter.title}}</div>
 				<ul>
@@ -62,6 +126,12 @@ export default {
 	text-align: left;
 	bottom: 0em;
 	overflow-y: scroll;
+}
+.logo{
+	height: 1.5em;
+	img{
+		height: 100%;
+	}
 }
 .title{
 	background-color: @backGrey;
