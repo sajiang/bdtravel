@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="nav fontBold">
       <div class="pd10 clearfix">
-        <div class="wh10p"><img class="icon" :src="imgPath+'/person.png'"></div>
+        <div class="wh10p" @click="showPersonalCenter"><img class="icon" :src="imgPath+'person.png'"></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='order'?'yellow':''" @click="navInfo.fisrt='order'"><span>打车</span></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='drive'?'yellow':''" @click="navInfo.fisrt='drive'"><span>自驾租车</span></div>
         <div class="wh10p"><img class="icon" :src="imgPath+'/info.png'"></div>
@@ -10,6 +10,31 @@
       <div class="clearfix">
         <div class="wh50p textRight"><span :class="navInfo.second=='passenger'?'yellowNav':''" class="mgr10 pd5 inlineBlock" @click="navInfo.second='passenger'">{{navInfo.fisrt=='order'?'乘客':'我要租车'}}</span></div>
         <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">{{navInfo.fisrt=='order'?'司机':'车主'}}</span><span class="smallFont saleBack">注册有奖</span></div>
+      </div>
+    </div>
+    <div v-show="personalCenterShow" @click="personalCenterShow=!personalCenterShow" class="ivu-modal-mask"></div>
+    <div class="personalCenter" v-show="personalCenterShow">
+      <div class="userName textCenter pd10">
+        <img class="icon" :src="imgPath+'person.png'">
+        <span>155*****246</span>
+      </div>
+      <div class="menu mgt10">
+        <div class="pd5">
+          <img class="middleIcon" :src="imgPath+'order.png'">
+          <span class="verticalBottom">订单</span>
+        </div>
+        <div class="pd5">
+          <img class="middleIcon" :src="imgPath+'account.png'">
+          <span class="verticalBottom">钱袋</span>
+        </div>
+        <div class="pd5">
+          <img class="middleIcon" :src="imgPath+'account.png'">
+          <span class="verticalBottom">设置</span>
+        </div>
+        <div class="pd5">
+          <img class="middleIcon" :src="imgPath+'account.png'">
+          <span class="verticalBottom">您的反馈</span>
+        </div>
       </div>
     </div>
     <router-view></router-view>
@@ -25,7 +50,8 @@ export default {
       navInfo:{
         fisrt:"",
         second:""
-      }
+      },
+      personalCenterShow:false,
     }
   },
   created:function (argument) {
@@ -45,6 +71,9 @@ export default {
     }
   },
   methods:{
+    showPersonalCenter(){
+      this.personalCenterShow=true;
+    }
   }
 }
 </script>
@@ -67,5 +96,14 @@ export default {
   .inlineBlock;
   .textRight;
   padding: 0.3em 1em;
+}
+.personalCenter{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: white;
+  width: 70%;
+  z-index: 1001;
 }
 </style>

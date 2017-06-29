@@ -7,31 +7,31 @@
 			<div class="title">热门车辆品牌</div>
 			<div class="clearfix">
 				<div class="clearfix textCenter mgt5 wh90p">
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('大众')">
 						<div class="logo">
 							<img :src="imgPath+'Volkswagen.png'">
 						</div>
 						<div>大众</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('现代')">
 						<div class="logo">
 							<img :src="imgPath+'Hyundai.png'">
 						</div>
 						<div>现代</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('丰田')">
 						<div class="logo">
 							<img :src="imgPath+'Toyota.png'">
 						</div>
 						<div>丰田</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('福特')">
 						<div class="logo">
 							<img :src="imgPath+'Ford.png'">
 						</div>
 						<div>福特</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('别克')">
 						<div class="logo">
 							<img :src="imgPath+'Buick.png'">
 						</div>
@@ -39,31 +39,31 @@
 					</div>
 				</div>
 				<div class="clearfix textCenter mgt5 wh90p">
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('本田')">
 						<div class="logo">
 							<img :src="imgPath+'Honda.png'">
 						</div>
 						<div>本田</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('起亚')">
 						<div class="logo">
 							<img :src="imgPath+'KIA.png'">
 						</div>
 						<div>起亚</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('奥迪')">
 						<div class="logo">
 							<img :src="imgPath+'audi.png'">
 						</div>
 						<div>奥迪</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('日产')">
 						<div class="logo">
 							<img  :src="imgPath+'Nissan.png'">
 						</div>
 						<div>日产</div>
 					</div>
-					<div class="wh20p">
+					<div class="wh20p" @click.stop="brandSelected('长安')">
 						<div class="logo">
 							<img :src="imgPath+'CHANA.png'">
 						</div>

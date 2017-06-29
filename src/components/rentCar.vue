@@ -124,10 +124,10 @@ export default {
 			this.typeSelectShow=true;
 		},
 		showOrderSelect(){
-			this.orderSelectShow=!this.orderSelectShow;
+			this.orderSelectShow=true;
 		},
 		showBrandSelect(){
-			this.brandSelectShow=!this.brandSelectShow;
+			this.brandSelectShow=true;
 		},
 		updateBrand(item){
 			this.brandSelectShow=false;
