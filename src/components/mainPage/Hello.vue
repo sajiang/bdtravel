@@ -19,20 +19,20 @@
         <span>155*****246</span>
       </div>
       <div class="menu mgt10">
-        <div class="pd5">
+        <div class="pd5" @click="toMyOrder">
           <img class="middleIcon" :src="imgPath+'order.png'">
           <span class="verticalBottom">订单</span>
         </div>
-        <div class="pd5">
+        <div class="pd5" @click="toAccount">
           <img class="middleIcon" :src="imgPath+'account.png'">
           <span class="verticalBottom">钱袋</span>
         </div>
         <div class="pd5">
-          <img class="middleIcon" :src="imgPath+'account.png'">
+          <img class="middleIcon" :src="imgPath+'setting.png'">
           <span class="verticalBottom">设置</span>
         </div>
         <div class="pd5">
-          <img class="middleIcon" :src="imgPath+'account.png'">
+          <img class="middleIcon" :src="imgPath+'feedback.png'">
           <span class="verticalBottom">您的反馈</span>
         </div>
       </div>
@@ -73,6 +73,12 @@ export default {
   methods:{
     showPersonalCenter(){
       this.personalCenterShow=true;
+    },
+    toMyOrder(){
+      this.$router.push({ path:"/personal_center/my_order/my_order_list" });
+    },
+    toAccount(){
+      this.$router.push({ path:"/personal_center/account/account_type" });
     }
   }
 }

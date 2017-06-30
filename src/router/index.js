@@ -49,6 +49,40 @@ export default new Router({
       name:'sureOrder',
       component: resolve => require(['@/components/sureOrder'], resolve),
     },
-    
+    {
+      path:'/personal_center/my_order/my_order_list',
+      name:'orderList',
+      component: resolve => require(['@/components/personalCenter/myOrder/myOrderList'], resolve),
+    },
+    { 
+      path:'/personal_center/my_order/order_detail',
+      name:'orderDetail',
+      component: resolve => require(['@/components/personalCenter/myOrder/orderDetail'], resolve),
+    },
+    { 
+      path:'/personal_center/my_order/driver_info',
+      name:'driverInfo',
+      component: resolve => require(['@/components/personalCenter/myOrder/driverInfo'], resolve),
+    },
+    { 
+      path:'/personal_center/account/account_type',
+      name:'accountType',
+      component: resolve => require(['@/components/personalCenter/account/accountType'], resolve),
+    },
+    { 
+      path:'/personal_center/account/recharge',
+      name:'recharge',
+      component: resolve => require(['@/components/personalCenter/account/recharge'], resolve),
+    },
+    { 
+      path:'/personal_center/account/left_money',
+      name:'leftMoney',
+      component: resolve => require(['@/components/personalCenter/account/leftMoney'], resolve),
+    },
+    { 
+      path:'/personal_center/account/voucher',
+      name:'voucher',
+      component: resolve => require(['@/components/personalCenter/account/voucher'], resolve),
+    },
   ]
 })
