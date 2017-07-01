@@ -27,7 +27,7 @@
           <img class="middleIcon" :src="imgPath+'account.png'">
           <span class="verticalBottom">钱袋</span>
         </div>
-        <div class="pd5">
+        <div class="pd5" @click="toSetting">
           <img class="middleIcon" :src="imgPath+'setting.png'">
           <span class="verticalBottom">设置</span>
         </div>
@@ -79,7 +79,10 @@ export default {
     },
     toAccount(){
       this.$router.push({ path:"/personal_center/account/account_type" });
-    }
+    },
+    toSetting(){
+      this.$router.push({ path:"/personal_center/setting/setting_index" });
+    },
   }
 }
 </script>

@@ -84,5 +84,10 @@ export default new Router({
       name:'voucher',
       component: resolve => require(['@/components/personalCenter/account/voucher'], resolve),
     },
+    { 
+      path:'/personal_center/setting/setting_index',
+      name:'settingIndex',
+      component: resolve => require(['@/components/personalCenter/setting/settingIndex'], resolve),
+    },
   ]
 })
