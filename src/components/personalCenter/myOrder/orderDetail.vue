@@ -8,15 +8,15 @@
 				<div>
 					<span class="">严师傅</span>
 					<span class="star">
-						<img class="icon" :src="imgPath+'deleteLater.png'">
+						<img class="icon starLevel" :src="imgPath+'starYellow.png'">
 						<span class="fontGrey smallFont">5.0</span>
 					</span>
 					<span class="fontGrey smallFont">3802单</span>
 				</div>
-				<div>
+				<div class="mgt5">
 					<span class="plate">琼AZE038</span>
 				</div>
-				<div>
+				<div class="mgt5">
 					<span class="carType smallFont fontGrey">白·丰田普锐斯</span>
 				</div>
 			</div>
@@ -41,11 +41,11 @@
 					匿名评价司机
 				</div>
 				<div class="mgt10">
-					<img :src="imgPath+'deleteLater.png'" class="middleIcon">
-					<img :src="imgPath+'deleteLater.png'" class="middleIcon">
-					<img :src="imgPath+'deleteLater.png'" class="middleIcon">
-					<img :src="imgPath+'deleteLater.png'" class="middleIcon">
-					<img :src="imgPath+'deleteLater.png'" class="middleIcon">
+					<img :src="imgPath+'starYellow.png'" class="middleIcon">
+					<img :src="imgPath+'starYellow.png'" class="middleIcon">
+					<img :src="imgPath+'starYellow.png'" class="middleIcon">
+					<img :src="imgPath+'starYellow.png'" class="middleIcon">
+					<img :src="imgPath+'starGrey.png'" class="middleIcon">
 				</div>
 			</div>
 		</div>
@@ -123,5 +123,8 @@ export default {
 	left: 0.5em;
 	right: 0.5em;
 	bottom: 0.5em;
+}
+.starLevel{
+	margin-top: -0.5em;
 }
 </style>
