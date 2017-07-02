@@ -1,19 +1,19 @@
 <template>
 	<div class="settingIndex">
-		<div class="type"  @click="toRecharge()">
+		<div class="type"  @click="toChangePassword()">
 			<span>密码更改</span>
 			<span class="fr yellow fontBold">></span>
 		</div>
-		<div class="type" @click="toLeftMoney()">
+		<div class="type" @click="toCommonQuestionList()">
 			<span>常见问题</span>
 			<span class="fr yellow fontBold">></span>
 		</div>
-		<div class="type" @click="toVoucher()">
+		<div class="type" @click="toLawList()">
 			<span>法律条款</span>
 			<span class="fr yellow fontBold">></span>
 		</div>
 		<div class="loginOut mgt5 yellowBackBtn fontBold textCenter pd5">
-			<span>下一步</span>
+			<span>退出登入</span>
 		</div>
 	</div>
 </template>
@@ -28,14 +28,14 @@ export default {
 		}
 	},
 	methods:{
-		toRecharge(){
-			this.$router.push({ path:"/personal_center/account/recharge" });
+		toChangePassword(){
+			this.$router.push({ path:"/personal_center/setting/get_verify_code" });
 		},
-		toLeftMoney(){
-			this.$router.push({ path:"/personal_center/account/left_money" });
+		toCommonQuestionList(){
+			this.$router.push({ path:"/personal_center/setting/common_question_list" });
 		},
-		toVoucher(){
-			this.$router.push({ path:"/personal_center/account/voucher" });
+		toLawList(){
+			this.$router.push({ path:"/personal_center/setting/law_list" });
 		},
 	}
 }

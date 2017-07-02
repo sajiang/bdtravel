@@ -1,0 +1,96 @@
+{
+    "passenger": {
+        "common": [
+            {
+                "name": "计价规则",
+                "content": "xx计价规则xxxxxxxxxxxxx"
+            },
+            {
+                "name": "如何使用拼座功能",
+                "content": "xxxxxxxx如何使用拼座功能xxxxxxx"
+            },
+            {
+                "name": "如何取消行程",
+                "content": "xxxx如何取消行程xxxxxxxxxxx"
+            },
+            {
+                "name": "取消赔偿机制",
+                "content": "xxxxx取消赔偿机制xxxxxxxxxx"
+            },
+            {
+                "name": "如何举报车牌不符",
+                "content": "xxxxxxxxxx如何举报车牌不符xxxx"
+            }
+        ],
+        "more": [
+            {
+                "name": "订单与行程",
+                "content": "xxxx订单与行程xxxxxxxxxxx"
+            },
+            {
+                "name": "拼座相关",
+                "content": "xxxx拼座相关xxxxxxxxxxx"
+            },
+            {
+                "name": "认证与个人资料",
+                "content": "xxxxxxxxxxxxx认证与个人资料xx"
+            },
+            {
+                "name": "支付与账户",
+                "content": "xxxxxxxxxxx支付与账户xxxx"
+            },
+            {
+                "name": "账号与信息",
+                "content": "xxxxxx账号与信息xxxxxxxxx"
+            }
+        ]
+        
+    },
+    "driver": {
+        "common": [
+            {
+                "name": "如何找到同行乘客",
+                "content": "xxxxxxx如何找到同行乘客xxxxxxxx"
+            },
+            {
+                "name": "平台信息服务费",
+                "content": "xxxxx平台信息服务费xxxxxxxxxx"
+            },
+            {
+                "name": "取消赔偿机制",
+                "content": "xxxxxxx取消赔偿机制xxxxxxxx"
+            },
+            {
+                "name": "如何使用拼座功能",
+                "content": "xxxxxx如何使用拼座功能xxxxxxxxx"
+            },
+            {
+                "name": "车费与奖励多久能到账",
+                "content": "xxxxxxx车费与奖励多久能到账xxxxxxxx"
+            },
+            {
+                "name": "如何提交车主认证",
+                "content": "xxxxxxxx如何提交车主认证xxxxxxx"
+            }
+        ],
+        "more": [
+            {
+                "name": "订单与行程",
+                "content": "xxxxxxxxx订单与行程xxxxxx"
+            },
+            {
+                "name": "拼座相关",
+                "content": "xxxxxxx拼座相关xxxxxxxx"
+            },
+            {
+                "name": "认证与个人资料",
+                "content": "xxxxxxxxxxx认证与个人资料xxxx"
+            },
+            {
+                "name": "支付与账户",
+                "content": "xxxxxxxxxx支付与账户xxxxx"
+            }
+        ]
+    }
+    
+}

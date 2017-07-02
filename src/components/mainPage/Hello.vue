@@ -31,7 +31,7 @@
           <img class="middleIcon" :src="imgPath+'setting.png'">
           <span class="verticalBottom">设置</span>
         </div>
-        <div class="pd5">
+        <div class="pd5" @click="toFeedback">
           <img class="middleIcon" :src="imgPath+'feedback.png'">
           <span class="verticalBottom">您的反馈</span>
         </div>
@@ -82,6 +82,9 @@ export default {
     },
     toSetting(){
       this.$router.push({ path:"/personal_center/setting/setting_index" });
+    },
+    toFeedback(){
+      this.$router.push({ path:"/personal_center/feedback" });
     },
   }
 }

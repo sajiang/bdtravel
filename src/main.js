@@ -4,12 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'iview/dist/styles/iview.css';
-
+import axios from 'axios'
 /*import iView from 'iview';
 
 
 Vue.use(iView);
 */
+Vue.prototype.$http = axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
