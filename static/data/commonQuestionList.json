@@ -1,0 +1,26 @@
+[{
+	"id":"kuaiche",
+	"name":"快车"
+},{
+	"id":"zhuanche",
+	"name":"专车"
+},{
+	"id":"chuzuche",
+	"name":"出租车"
+},{
+	"id":"daijia",
+	"name":"代驾"
+},{
+	"id":"xiaoba",
+	"name":"小巴"
+},{
+	"id":"shunfengche",
+	"name":"顺风车"
+},{
+	"id":"zuche",
+	"name":"租车"
+},{
+	"id":"gongjiao",
+	"name":"公交"
+}
+]

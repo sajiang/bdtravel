@@ -84,5 +84,45 @@ export default new Router({
       name:'voucher',
       component: resolve => require(['@/components/personalCenter/account/voucher'], resolve),
     },
+    { 
+      path:'/personal_center/setting/setting_index',
+      name:'settingIndex',
+      component: resolve => require(['@/components/personalCenter/setting/settingIndex'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/get_verify_code',
+      name:'getVerifyCode',
+      component: resolve => require(['@/components/personalCenter/setting/getVerifyCode'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/change_password',
+      name:'changePassword',
+      component: resolve => require(['@/components/personalCenter/setting/changePassword'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/common_question_list',
+      name:'commonQuestionList',
+      component: resolve => require(['@/components/personalCenter/setting/commonQuestionList'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/common_question_detail/:id',
+      name:'commonQuestionDetail',
+      component: resolve => require(['@/components/personalCenter/setting/commonQuestionDetail'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/content/:content',
+      name:'content',
+      component: resolve => require(['@/components/personalCenter/setting/content'], resolve),
+    },
+    { 
+      path:'/personal_center/setting/law_list',
+      name:'lawList',
+      component: resolve => require(['@/components/personalCenter/setting/lawList'], resolve),
+    },
+    { 
+      path:'/personal_center/feedback',
+      name:'feedback',
+      component: resolve => require(['@/components/personalCenter/feedback/feedback'], resolve),
+    }
   ]
 })
