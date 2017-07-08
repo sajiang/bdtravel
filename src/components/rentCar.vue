@@ -56,7 +56,7 @@
 					<span>价 格</span>
 				</div>
 				<div class="option" @click="orderSelected('star')">
-					<img  :src="imgPath+'/deleteLater.png'" class="icon">
+					<img  :src="imgPath+'/starYellow.png'" class="icon">
 					<span>星 级</span>
 				</div>
 			</span>
@@ -77,7 +77,7 @@
 						<div class="wh33p"><span class="smallFont">¥</span><span class="bigFont">109</span><span class="smallFont">/天</span></div>
 					</div>
 					<div class="borderTopGrey clearfix pd5">
-						<img v-for="i in 5" :src="imgPath+'/deleteLater.png'" class="icon fr">
+						<img v-for="i in 5" :src="imgPath+'/starYellow.png'" class="icon fr">
 					</div>
 				</div>
 			</div>

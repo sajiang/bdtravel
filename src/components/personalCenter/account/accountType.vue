@@ -31,13 +31,13 @@ export default {
 	},
 	methods:{
 		toRecharge(){
-			this.$router.push({ path:"/personal_center/account/recharge" });
+			this.$router.push({ path:"/personal_center/account/pay/0" });
 		},
 		toLeftMoney(){
 			this.$router.push({ path:"/personal_center/account/left_money" });
 		},
 		toVoucher(){
-			this.$router.push({ path:"/personal_center/account/voucher" });
+			this.$router.push({ path:"/personal_center/account/voucher/0" });
 		},
 	}
 }

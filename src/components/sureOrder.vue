@@ -75,7 +75,7 @@
 				</div>
 			</div>
 			<div class="wh30p">
-				<div class=" yellowBackBtn fontBold textCenter" @click="">
+				<div class=" yellowBackBtn fontBold textCenter" @click="toPayPage()">
 					<span>立即租车</span>
 				</div>
 			</div>
@@ -99,6 +99,9 @@ export default {
 	methods:{
 		change (status) {
 			console.log(status)
+		},
+		toPayPage(){
+			this.$router.push({ path:"/personal_center/account/pay/1" });
 		}
 	}
 }

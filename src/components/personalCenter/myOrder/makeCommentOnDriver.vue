@@ -1,29 +1,15 @@
 <template>
-	<div class="orderDetail">
-		<div class="driverInfo clearfix" @click="toDriverInfo">
-			<div class="wh20p">
+	<div class="makeCommentOnDriver">
+		<div class="driverInfo clearfix">
+			<div class="wh30p">
 				<img class="avatar" :src="imgPath+'deleteLater.png'">
 			</div>
-			<div class="wh50p">
-				<div>
+			<div class="wh70p">
+				<div class="mgt5">
 					<span class="">严师傅</span>
-					<span class="star">
-						<img class="icon starLevel" :src="imgPath+'starYellow.png'">
-						<span class="fontGrey smallFont">5.0</span>
-					</span>
+				</div>
+				<div class="mgt5">
 					<span class="fontGrey smallFont">3802单</span>
-				</div>
-				<div class="mgt5">
-					<span class="plate">琼AZE038</span>
-				</div>
-				<div class="mgt5">
-					<span class="carType smallFont fontGrey">白·丰田普锐斯</span>
-				</div>
-			</div>
-			<div class="wh30p">
-				<div class="mgt5 fr">
-					<img class="middleIcon" :src="imgPath+'message.png'">
-					<img class="middleIcon" :src="imgPath+'phoneCall.png'">
 				</div>
 			</div>
 		</div>
@@ -32,21 +18,25 @@
 				<span class="font2_5">10.50</span>
 				<span class="fontGrey smallFont">元</span>
 			</div>
-			<div class="textCenter fontGrey smallFont mgt5">
-				<span class="mgr10">查看明细 ></span>
-				<span class="mgl10">开具发票 ></span>
-			</div>
-			<div class="mgt30 textCenter pd10">
-				<div class="fontGrey smallFont">
-					匿名评价司机
-				</div>
-				<div class="mgt10">
+			<div class="textCenter pd10">
+				<div class="">
 					<img :src="imgPath+'starYellow.png'" class="middleIcon">
 					<img :src="imgPath+'starYellow.png'" class="middleIcon">
 					<img :src="imgPath+'starYellow.png'" class="middleIcon">
 					<img :src="imgPath+'starYellow.png'" class="middleIcon">
 					<img :src="imgPath+'starGrey.png'" class="middleIcon">
 				</div>
+			</div>
+			<div class="tags">
+				<span class="chosenTag">神准时</span>
+				<span class="tag">颜值爆表</span>
+				<span class="tag">非常有礼貌</span>
+				<span class="tag">神准时</span>
+				<span class="tag">神准时</span>
+				<span class="tag">神准时</span>
+				<span class="tag">神准时</span>
+				<span class="tag">神准时</span>
+				<span class="tag">神准时</span>
 			</div>
 		</div>
 		<div class="mgt10 appraise">
@@ -61,23 +51,20 @@
 <script>
 
 export default {
-	name: 'orderDetail',
+	name: 'makeCommentOnDriver',
 	data () {
 		return {
 		  	imgPath:"../../../static/",
 		}
 	},
 	methods:{
-		toDriverInfo(){
-			this.$router.push({ path:"/personal_center/my_order/driver_info" });
-		}
 	}
 }
 </script>
 
 <style lang='less' scoped>
 @import '../../../assets/common.less';
-.orderDetail{
+.makeCommentOnDriver{
 	.backGrey;
 	.pd5;
 	position: fixed;
@@ -108,6 +95,7 @@ export default {
 }
 .orderInfo{
 	background-color: white;
+	padding-top: 2em;
 }
 .appraise{
 	background-color: white;
@@ -126,5 +114,24 @@ export default {
 }
 .starLevel{
 	margin-top: -0.5em;
+}
+.tags{
+	.pd5;
+
+	.tag{
+		padding: 0.5em 1em;
+		line-height: 3em;
+		border:1px solid @borderGrey;
+		white-space: nowrap;
+		.fontGrey;
+	}
+	.chosenTag{
+		padding: 0.5em 1em;
+		line-height: 3em;
+		white-space: nowrap;
+		.fontGrey;
+		border: 1px solid @yellow;
+		background-color: @yellow;
+	}
 }
 </style>

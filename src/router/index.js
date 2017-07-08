@@ -55,14 +55,29 @@ export default new Router({
       component: resolve => require(['@/components/personalCenter/myOrder/myOrderList'], resolve),
     },
     { 
-      path:'/personal_center/my_order/order_detail',
-      name:'orderDetail',
-      component: resolve => require(['@/components/personalCenter/myOrder/orderDetail'], resolve),
+      path:'/personal_center/my_order/comment_on_driver',
+      name:'commentOnDriver',
+      component: resolve => require(['@/components/personalCenter/myOrder/commentOnDriver'], resolve),
     },
     { 
-      path:'/personal_center/my_order/driver_info',
-      name:'driverInfo',
-      component: resolve => require(['@/components/personalCenter/myOrder/driverInfo'], resolve),
+      path:'/personal_center/my_order/comment_on_car',
+      name:'commentOnCar',
+      component: resolve => require(['@/components/personalCenter/myOrder/commentOnCar'], resolve),
+    },
+    { 
+      path:'/personal_center/my_order/make_comment_on_driver',
+      name:'makeCommentOnDriver',
+      component: resolve => require(['@/components/personalCenter/myOrder/makeCommentOnDriver'], resolve),
+    },
+    { 
+      path:'/personal_center/my_order/make_comment_on_car',
+      name:'makeCommentOnCar',
+      component: resolve => require(['@/components/personalCenter/myOrder/makeCommentOnCar'], resolve),
+    },
+    { 
+      path:'/personal_center/my_order/pay_to_driver',
+      name:'payToDriver',
+      component: resolve => require(['@/components/personalCenter/myOrder/payToDriver'], resolve),
     },
     { 
       path:'/personal_center/account/account_type',
@@ -70,9 +85,9 @@ export default new Router({
       component: resolve => require(['@/components/personalCenter/account/accountType'], resolve),
     },
     { 
-      path:'/personal_center/account/recharge',
-      name:'recharge',
-      component: resolve => require(['@/components/personalCenter/account/recharge'], resolve),
+      path:'/personal_center/account/pay/:showLeftMoney',
+      name:'pay',
+      component: resolve => require(['@/components/personalCenter/account/pay'], resolve),
     },
     { 
       path:'/personal_center/account/left_money',
@@ -80,7 +95,7 @@ export default new Router({
       component: resolve => require(['@/components/personalCenter/account/leftMoney'], resolve),
     },
     { 
-      path:'/personal_center/account/voucher',
+      path:'/personal_center/account/voucher/:isSelect',
       name:'voucher',
       component: resolve => require(['@/components/personalCenter/account/voucher'], resolve),
     },

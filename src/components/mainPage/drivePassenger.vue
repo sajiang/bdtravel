@@ -10,10 +10,16 @@
 				</div>
 			</div>
 			<div class="info greyBottomBorder mgt5">
-				<div class="pd10">
-					<img class="icon" :src="imgPath+'locationBlack.png'">
-					<span class="fontBold">您在哪儿取车？</span>
-					<span class="smallFont">（免费送车）</span>
+				<div class="pd10" @click="isCityFromSelectShow=true;">
+					<img class="icon" :src="imgPath+'locationYellow.png'">
+					<v-position-select :message="isCityFromSelectShow" @cancelSelect="cancelPositionFromSelect()" @placeSelected="placeFromSelected($event)">
+						<span v-if="positionFrom">{{positionFrom}}</span>
+						<span v-else>
+							<span class="fontBold">您在哪儿取车？</span>
+							<span class="smallFont">（免费送车）</span>
+						</span>
+					</v-position-select>
+					
 				</div>
 				<div class="pd10">
 					<img class="icon" :src="imgPath+'locationBlack.png'">
@@ -32,18 +38,30 @@
 </template>
 
 <script>
-
+import positonSelect from '@/components/common/positonSelect'
 export default {
 	name: 'drivePassenger',
 	data () {
 		return {
 		  	imgPath:"../../static/",
+		  	positionFrom:"",
+		  	isCityFromSelectShow:false,
 		}
+	},
+	components: {
+    	'v-position-select': positonSelect,
 	},
 	methods:{
 		toRentCar(){
 			this.$router.push({path:"/rent_car"});
-		}
+		},
+		cancelPositionFromSelect(){
+			this.isCityFromSelectShow=false;
+		},
+		placeFromSelected(item){
+			this.isCityFromSelectShow=false;
+			this.positionFrom=item.name;
+		},
 	}
 }
 </script>
