@@ -5,11 +5,13 @@
         <div class="wh10p" @click="showPersonalCenter"><img class="icon" :src="imgPath+'person.png'"></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='order'?'yellow':''" @click="navInfo.fisrt='order'"><span>打车</span></div>
         <div class="wh40p textCenter" :class="navInfo.fisrt=='drive'?'yellow':''" @click="navInfo.fisrt='drive'"><span>自驾租车</span></div>
-        <div class="wh10p"><img class="icon" :src="imgPath+'/info.png'"></div>
+        <div class="wh10p"><img class="icon" :src="imgPath+'/info.png'" style="position: absolute;top: 1.2em;right: 1em;"></div> <!--spf-->
       </div>
       <div class="clearfix">
-        <div class="wh50p textRight"><span :class="navInfo.second=='passenger'?'yellowNav':''" class="mgr10 pd5 inlineBlock" @click="navInfo.second='passenger'">{{navInfo.fisrt=='order'?'乘客':'我要租车'}}</span></div>
-        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd5 inlineBlock" @click="navInfo.second='owner'">{{navInfo.fisrt=='order'?'司机':'车主'}}</span><span class="smallFont saleBack">注册有奖</span></div>
+      	<!--spf-->
+        <div class="wh50p textRight"><span :class="navInfo.second=='passenger'?'yellowNav':''" class="mgr10 pd4 inlineBlock" @click="navInfo.second='passenger'">{{navInfo.fisrt=='order'?'乘客':'我要租车'}}</span></div>
+        <div class="wh50p textLeft"><span :class="navInfo.second=='owner'?'yellowNav':''" class="mgl10 pd4 inlineBlock" @click="navInfo.second='owner'">{{navInfo.fisrt=='order'?'司机':'车主'}}</span><span class="smallFont saleBack">注册有奖</span></div>
+        
       </div>
     </div>
     <div v-show="personalCenterShow" @click="personalCenterShow=!personalCenterShow" class="ivu-modal-mask"></div>
@@ -64,10 +66,18 @@ export default {
   watch:{
     navInfo:{
       handler:function (val , oldval) {
-        let path=this.navInfo.fisrt+"_"+this.navInfo.second;
-        this.$router.push({ path });
+        if (this.navInfo.fisrt=="order"||this.navInfo.fisrt=="drive"){
+          let path=this.navInfo.fisrt+"_"+this.navInfo.second;
+          this.$router.push({ path });
+        }
       },
       deep:true
+    },
+    "$route":function (val , oldval) {
+      let navInfoStr=this.$route.path;
+      navInfoStr=navInfoStr.substr(1);
+      this.navInfo.fisrt=navInfoStr.split("_")[0];
+      this.navInfo.second=navInfoStr.split("_")[1];
     }
   },
   methods:{
@@ -118,4 +128,5 @@ export default {
   width: 70%;
   z-index: 1001;
 }
+
 </style>

@@ -11,7 +11,7 @@
 			</div>
 			<div class="info greyBottomBorder mgt5">
 				<div class="pd10" @click="isCityFromSelectShow=true;">
-					<img class="icon" :src="imgPath+'locationYellow.png'">
+					<img class="cIcon" :src="imgPath+'locationYellow.png'" style="vertical-align: -0.3em;">  <!--spf-->
 					<v-position-select :message="isCityFromSelectShow" @cancelSelect="cancelPositionFromSelect()" @placeSelected="placeFromSelected($event)">
 						<span v-if="positionFrom">{{positionFrom}}</span>
 						<span v-else>
@@ -22,7 +22,7 @@
 					
 				</div>
 				<div class="pd10">
-					<img class="icon" :src="imgPath+'locationBlack.png'">
+					<img class="cIcon" :src="imgPath+'locationBlack.png'" style="vertical-align: -0.3em;">  <!--spf-->
 					<span class="fontBold">分时租赁</span>
 					<span class="smallFont">（查找离您最近的闲置车辆）</span>
 				</div>

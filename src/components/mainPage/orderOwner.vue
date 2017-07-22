@@ -59,7 +59,8 @@ export default {
 
         	if(pattern.test(this.cellphoneNumber)){
         		//next
-        		this.$router.push({path:'driver_authentication/step1'})
+        		this.cellphoneModel=false;
+        		this.$router.push({path:'/driver_authentication/step1'});
         	}else{
         		//alert
         		this.warning=true;

@@ -62,15 +62,15 @@
 				</div>
 			</div>
 		</div>
-		
+		<div class="placeholder"></div>
 		<div class="bottom clearfix">
-			<div class="wh70p smallFont">
+			<div class="wh70p ">
 				<div class="fontGrey">
-					<span>定金</span>
+					<span class="smallFont">定金</span>
 					<span class="bigFont orange fontBold">185.8</span>
-					<span>元(总金额10%，订单完成退还)</span>
+					<span class="smallFont">元(总金额10%，订单完成退还)</span>
 				</div>
-				<div class="orange">
+				<div class="orange smallFont">
 					为避免押金退还纠纷，请在中立平台支付！
 				</div>
 			</div>
@@ -115,6 +115,7 @@ export default {
 	position: absolute;
 	bottom :5em;
 	top: 0em;
+	overflow-y: scroll;
 }
 .carInfo{
 	background-color: white;
@@ -141,6 +142,10 @@ export default {
 		line-height: 1.2em;
 	}
 }
+.placeholder{
+	height: 5em;
+	width: 100%;
+}
 .bottom{
 	position: fixed;
 	bottom: 0em;
@@ -154,5 +159,20 @@ export default {
 		display: inline-block;
 		width: 6em;
 	}
+	.smallFont{
+		font-size: 0.8em;
+	}
+}
+.ivu-switch-small {
+    width: 36px;
+    height: 18px;
+    line-height: 10px;
+}
+.ivu-switch-small:after {
+    width: 15px;
+    height: 15px;
+}
+.ivu-switch-small.ivu-switch-checked:after {
+    left: 20px;
 }
 </style>

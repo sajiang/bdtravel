@@ -18,4 +18,5 @@ export default {
 
 <style lang='less' scoped>
 @import '../assets/common.less';
+
 </style>

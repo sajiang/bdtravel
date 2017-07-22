@@ -9,11 +9,11 @@
 			</div>
 			<div class="orderInfo fontGrey fontBold">
 				<div>
-					<img :src="imgPath+'/locationYellow.png'" class="icon">
+					<img :src="imgPath+'/locationYellow.png'" class="cIcon">
 					<span>出发：海口-海涯国际大厦</span>
 				</div>
 				<div class="mgt5">
-					<img :src="imgPath+'/locationBlack.png'" class="icon">
+					<img :src="imgPath+'/locationBlack.png'" class="cIcon">
 					<span>出发：文昌-维佳大酒店</span>
 				</div>
 				<div class="mgt5">
@@ -23,13 +23,22 @@
 				</div>
 			</div>
 			<div class="clearfix bottom">
-				<div class="wh50p textCenter borderRight pd10">
-					<img :src="imgPath+'/deleteLater.png'" class="icon">
-					<span>告知好友</span>
+				<div class="wh50p textCenter borderRight pd10" @click="cellphoneModel=true">
+					<img :src="imgPath+'/orderForFriend.png'" class="icon2">
+					<span class="orange font1_1">替人下单</span>
 				</div>
 				<div class="wh50p textCenter pd10">
-					<span class="biggerFont fontBlack">¥12.</span>
+					<span class="orange font1_1">约</span>
+					<span class="bigFont fontBlack">¥12.</span>
 					<span >5元</span>
+				</div>
+			</div>
+			<div class="rentPersonInfo clearfix" v-show="rentForSbShow">
+				<div class="wh50p textCenter borderRight pd10" >
+					<span class="">{{cellphoneNumber}}</span>
+				</div>
+				<div class="wh50p textCenter pd10">
+					<span >{{name}}</span>
 				</div>
 			</div>
 		</div>
@@ -51,7 +60,7 @@
 							</div>
 							<div class="fontGrey">丰田卡罗拉</div>
 						</div>
-						<div class="wh25p mgt5">
+						<div class="wh25p mgt5" @click="toPayToDriver">
 							<span class="orange">点击预定</span>
 						</div>
 					</div>
@@ -61,14 +70,14 @@
 							<span>发车时间：客满就走</span>
 						</div>
 						<div class="mgt5">
-							<img :src="imgPath+'/locationYellow.png'" class="icon">
+							<img :src="imgPath+'/locationYellow.png'" class="cIcon">
 							<span>车辆位置：海口市-海口日月广场</span>
 							<span class="fontGrey smallFont">国兴大道 4.3km</span>
 						</div>
 						<div class="mgt5">
 							<img :src="imgPath+'/deleteLater.png'" class="icon">
 							<span>评价详情</span>
-							<span class="orange">（好评率95%）</span>
+							<span class="orange" @click="toCommentOnDriver">（好评率95%）</span><!--spf-->
 						</div>
 					</div>
 					<div class="status">
@@ -85,16 +94,73 @@
 				</div>
 			</div>
 		</div>
+		<Modal v-model="cellphoneModel"  class-name="vertical-center-modal">
+	        <div class="mgt20">
+	        	<div class="pd10 borderTopBottom">
+	        		<span class="mgr10">手机号码</span>
+	        		<input type="text" name="" class="noBorder" placeholder="中国大陆手机号码"  v-model="cellphoneNumber">
+	        	</div>
+	        	<div class="pd10 borderTopBottom mgt10 relative">
+	        		<span class="mgr15 mgl15">姓名</span>
+	        		<input type="text" name="" class="noBorder" placeholder="请输入乘车人姓名" v-model="name">
+	        	</div>
+	        </div>
+	        <div slot="footer">
+	            <div class=" yellowBackBtn fontBold textCenter pd5" @click="sureToRentCarForSb">
+					<span>下一步</span>
+				</div>
+	        </div>
+	    </Modal>
+	    <Modal v-model="warning" title="提示" :closable="false" class-name="vertical-center-modal">
+	        <p>{{warningInfo}}</p>
+	        <div slot="footer">
+	            <span class="yellow" @click="warning = false">确定</span>
+	        </div>
+	    </Modal>
 	</div>
 </template>
 
 <script>
-
+import Modal from 'iview/src/components/modal';
 export default {
 	name: 'orderCar',
 	data () {
 		return {
 		  	imgPath:"../../static/",
+		  	cellphoneModel: false,
+		  	warning:false,
+		  	cellphoneNumber:"",
+		  	name:'',
+		  	rentForSbShow:false,
+		  	warningInfo:"",
+		}
+	},
+	components:{
+		"Modal":Modal,
+	},
+	methods:{
+		toCommentOnDriver(){
+			this.$router.push({ path:"/personal_center/my_order/comment_on_driver" });/*spf*/
+		},
+		sureToRentCarForSb(){
+			
+			let pattern=/^1\d{10}$/;
+
+        	if(!pattern.test(this.cellphoneNumber)){
+        		//next
+        		this.warning=true;
+        		this.warningInfo="请输入正确的手机号";
+        	}else if(this.name==""){
+        		//alert
+        		this.warning=true;
+        		this.warningInfo="请输入乘车人姓名";
+        	}else{
+        		this.rentForSbShow=true;
+        		this.cellphoneModel=false;
+        	}
+		},
+		toPayToDriver(){
+			this.$router.push({ path:"/personal_center/my_order/pay_to_driver"});
 		}
 	}
 }
@@ -113,9 +179,7 @@ export default {
 	}
 	.bottom{
 		border-top: 1px solid @borderGrey;
-		.borderRight{
-			border-right: 1px solid @borderGrey;
-		}
+		
 	}
 }
 .matchCarOwner{
@@ -150,5 +214,21 @@ export default {
 	overflow: hidden;/*内容超出后隐藏*/
 	text-overflow: ellipsis;/* 超出内容显示为省略号*/
 	white-space: nowrap;/*文本不进行换行*/
+}
+.rentPersonInfo{
+	background-color: white;
+	border-top: 1rem solid @backGrey;
+	margin-bottom: 0.5em;
+}
+.noBorder{
+	border:none;
+	outline:none
+}
+.borderTopBottom{
+	border-bottom: 1px solid #e9eaec;
+	border-top: 1px solid #e9eaec;
+}
+.borderRight{
+	border-right: 1px solid @borderGrey;
 }
 </style>

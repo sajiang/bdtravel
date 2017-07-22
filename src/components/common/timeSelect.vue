@@ -3,6 +3,7 @@
 		<slot>
 	    	选择时间
 	  	</slot>
+	  	<div class="ivu-modal-mask" v-show="maskShow" @click.stop="hidePicker"></div>
 	</span>
 </template>
 
@@ -14,6 +15,7 @@ export default {
 		return {
 		  	imgPath:"../../static/",
 		  	picker:{},
+		  	maskShow:false,
 		}
 	},
 	created:function (argument) {
@@ -21,6 +23,10 @@ export default {
 		this.popUpSelect();
 	},
 	methods:{
+		hidePicker(){
+			this.maskShow=false;
+			this.picker.hide();
+		},
 		popUpSelect(){
 			this.picker = new mui.PopPicker({
 				layer: 3
@@ -99,8 +105,10 @@ export default {
 		},
 		showSelect(){
 			var _this=this;
+			this.maskShow=true;
 			this.picker.show(function(items) {
 				_this.$emit("timeSelected",items);
+				_this.maskShow=false;
 			});
 		}
 	}

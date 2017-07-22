@@ -76,7 +76,7 @@
 						</div>
 						<div class="wh33p"><span class="smallFont">¥</span><span class="bigFont">109</span><span class="smallFont">/天</span></div>
 					</div>
-					<div class="borderTopGrey clearfix pd5">
+					<div class="borderTopGrey clearfix pd5"  @click.stop="toCommentOnDriver">
 						<img v-for="i in 5" :src="imgPath+'/starYellow.png'" class="icon fr">
 					</div>
 				</div>
@@ -156,7 +156,10 @@ export default {
 		},
 		cancelPlaceSelect(){
 			this.placeSelectShow=false;
-		}
+		},
+		toCommentOnDriver(){
+			this.$router.push({ path:"/personal_center/my_order/comment_on_driver" });
+		},
 	}
 }
 </script>

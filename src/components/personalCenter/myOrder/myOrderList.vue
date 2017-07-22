@@ -5,21 +5,21 @@
 			<div class="wh50p pd5" @click="changeType(2)"><span class="pd5" :class="type=='2'?'borderBottom':''">自驾租车</span></div>
 		</div>
 		<div class="orderList" v-show="type==1">
-			<div class="item mgt5" @click="toSureOrder">
+			<div class="item mgt5" @click="toPayToDriver">
 				<div class="type">
 					<span>快车</span>
 					<span class="fontGrey fr">待支付></span>
 				</div>
 				<div class="time fontGrey mgt5">
-					<img :src="imgPath+'locationGreen.png'" class="icon">
+					<img :src="imgPath+'locationGreen.png'" class="cIcon">
 					<span class="verticalBottom">6月14日 09:30</span>
 				</div>
 				<div class="from fontGrey">
-					<img :src="imgPath+'locationYellow.png'" class="icon">
+					<img :src="imgPath+'locationYellow.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区.白龙街道.青年路美兰区.白龙街道.青年路</span>
 				</div>
 				<div class="to fontGrey">
-					<img :src="imgPath+'locationBlack.png'" class="icon">
+					<img :src="imgPath+'locationBlack.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区蓝天路41号、43号南宝商场</span>
 				</div>
 			</div>
@@ -29,15 +29,15 @@
 					<span class="fontGrey fr">已完成></span>
 				</div>
 				<div class="time fontGrey mgt5">
-					<img :src="imgPath+'locationGreen.png'" class="icon">
+					<img :src="imgPath+'locationGreen.png'" class="cIcon">
 					<span class="verticalBottom">6月14日 09:30</span>
 				</div>
 				<div class="from fontGrey">
-					<img :src="imgPath+'locationYellow.png'" class="icon">
+					<img :src="imgPath+'locationYellow.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区.白龙街道.青年路美兰区.白龙街道.青年路</span>
 				</div>
 				<div class="to fontGrey">
-					<img :src="imgPath+'locationBlack.png'" class="icon">
+					<img :src="imgPath+'locationBlack.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区蓝天路41号、43号南宝商场</span>
 				</div>
 			</div>
@@ -47,21 +47,21 @@
 					<span class="fontGrey fr">待评价></span>
 				</div>
 				<div class="time fontGrey mgt5">
-					<img :src="imgPath+'locationGreen.png'" class="icon">
+					<img :src="imgPath+'locationGreen.png'" class="cIcon">
 					<span class="verticalBottom">6月14日 09:30</span>
 				</div>
 				<div class="from fontGrey">
-					<img :src="imgPath+'locationYellow.png'" class="icon">
+					<img :src="imgPath+'locationYellow.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区.白龙街道.青年路美兰区.白龙街道.青年路</span>
 				</div>
 				<div class="to fontGrey">
-					<img :src="imgPath+'locationBlack.png'" class="icon">
+					<img :src="imgPath+'locationBlack.png'" class="cIcon">
 					<span class="nobr verticalBottom">美兰区蓝天路41号、43号南宝商场</span>
 				</div>
 			</div>
 		</div>
 		<div class="rentList" v-show="type==2">
-			<div class="item mgt5" @click="toPayToDriver">
+			<div class="item mgt5" @click="toSureOrder">
 				<div>
 					<span class="fontBold">订单编号<span>A1324309</span></span>
 					<span class="fontGrey fr">待支付></span>

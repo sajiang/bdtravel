@@ -60,7 +60,7 @@ export default {
 @import '../../assets/common.less';
 .preview{
 	background-color: @backGrey;
-	padding: 4em 0.5em;
+	padding: 0.5em 0.5em 8em 0.5em;
 }
 .drivingLicensePreview,.vehicleLicensePreview{
 	background-color: white;
